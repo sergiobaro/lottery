@@ -19,5 +19,4 @@ struct Spinner: UIViewRepresentable {
       uiView.stopAnimating()
     }
   }
-  
 }

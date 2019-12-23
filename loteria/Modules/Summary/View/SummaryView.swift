@@ -1,18 +1,17 @@
 import SwiftUI
 
-struct MainSummaryView: View {
+struct SummaryView: View {
   @ObservedObject var presenter: SummaryPresenter
   
   var body: some View {
-    NavigationView {
+    VStack {
       if self.presenter.isLoading {
         Spinner(isAnimating: true)
       } else {
-        SummaryView(viewModel: self.presenter.viewModel)
+        SummaryStackView(viewModel: self.presenter.viewModel)
+          .padding(.top, 30.0)
+        Spacer()
       }
-    }
-    .tabItem {
-      Text("Resumen")
     }
     .onAppear {
       self.presenter.viewDidAppear()
@@ -20,8 +19,8 @@ struct MainSummaryView: View {
   }
 }
 
-struct MainSummaryView_Previews: PreviewProvider {
+struct SummaryView_Previews: PreviewProvider {
   static var previews: some View {
-    MainSummaryView(presenter: SummaryPresenter())
+    SummaryView(presenter: SummaryPresenter())
   }
 }

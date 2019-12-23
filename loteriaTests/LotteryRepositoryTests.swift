@@ -5,7 +5,7 @@ class LotteryRepositoryTests: XCTestCase {
   
   let repository = LotteryRepository()
   
-  func test_() {
+  func test_summary() {
     let expectation = self.expectation(description: "Fetch summary")
     repository.fetchSummary() { response in
       XCTAssertNotNil(response)

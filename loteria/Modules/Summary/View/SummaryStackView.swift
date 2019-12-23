@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SummaryView: View {
+struct SummaryStackView: View {
   let viewModel: SummaryViewModel
   
   var body: some View {
@@ -15,8 +15,8 @@ struct SummaryView: View {
   }
 }
 
-struct SummaryView_Previews: PreviewProvider {
+struct SummaryStackView_Previews: PreviewProvider {
   static var previews: some View {
-    SummaryView(viewModel: .example())
+    SummaryStackView(viewModel: .example())
   }
 }

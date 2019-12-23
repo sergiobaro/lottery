@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D95018D323B0F0E7007C6D0A /* SummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95018D223B0F0E7007C6D0A /* SummaryCardView.swift */; };
-		D98273E323B115F8000FA3F8 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98273E223B115F8000FA3F8 /* SummaryView.swift */; };
+		D98273E323B115F8000FA3F8 /* SummaryStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98273E223B115F8000FA3F8 /* SummaryStackView.swift */; };
 		D9BFEB3523AFA6B700830245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3423AFA6B700830245 /* AppDelegate.swift */; };
 		D9BFEB3723AFA6B700830245 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3623AFA6B700830245 /* SceneDelegate.swift */; };
-		D9BFEB3923AFA6B700830245 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3823AFA6B700830245 /* MainView.swift */; };
+		D9BFEB3923AFA6B700830245 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3823AFA6B700830245 /* AppView.swift */; };
 		D9BFEB3B23AFA6B800830245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9BFEB3A23AFA6B800830245 /* Assets.xcassets */; };
 		D9BFEB3E23AFA6B800830245 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9BFEB3D23AFA6B800830245 /* Preview Assets.xcassets */; };
 		D9BFEB4123AFA6B800830245 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9BFEB3F23AFA6B800830245 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		D9BFEB5A23AFA91A00830245 /* LotteryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB5923AFA91900830245 /* LotteryRepositoryTests.swift */; };
 		D9BFEB5C23AFB04F00830245 /* LotterySummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB5B23AFB04F00830245 /* LotterySummaryResponse.swift */; };
 		D9BFEB5E23AFB06700830245 /* LotteryStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB5D23AFB06700830245 /* LotteryStatus.swift */; };
-		D9BFEB6423AFB37100830245 /* MainSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6323AFB37100830245 /* MainSummaryView.swift */; };
+		D9BFEB6423AFB37100830245 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6323AFB37100830245 /* SummaryView.swift */; };
 		D9BFEB6623AFB53400830245 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6523AFB53400830245 /* SummaryViewModel.swift */; };
 		D9BFEB6823AFB63F00830245 /* SummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6723AFB63F00830245 /* SummaryPresenter.swift */; };
 		D9BFEB6B23AFC7FA00830245 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6A23AFC7FA00830245 /* Spinner.swift */; };
@@ -37,11 +37,11 @@
 
 /* Begin PBXFileReference section */
 		D95018D223B0F0E7007C6D0A /* SummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCardView.swift; sourceTree = "<group>"; };
-		D98273E223B115F8000FA3F8 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		D98273E223B115F8000FA3F8 /* SummaryStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryStackView.swift; sourceTree = "<group>"; };
 		D9BFEB3123AFA6B700830245 /* loteria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loteria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9BFEB3423AFA6B700830245 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9BFEB3623AFA6B700830245 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D9BFEB3823AFA6B700830245 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D9BFEB3823AFA6B700830245 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		D9BFEB3A23AFA6B800830245 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9BFEB3D23AFA6B800830245 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D9BFEB4023AFA6B800830245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		D9BFEB5923AFA91900830245 /* LotteryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryRepositoryTests.swift; sourceTree = "<group>"; };
 		D9BFEB5B23AFB04F00830245 /* LotterySummaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotterySummaryResponse.swift; sourceTree = "<group>"; };
 		D9BFEB5D23AFB06700830245 /* LotteryStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryStatus.swift; sourceTree = "<group>"; };
-		D9BFEB6323AFB37100830245 /* MainSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSummaryView.swift; sourceTree = "<group>"; };
+		D9BFEB6323AFB37100830245 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		D9BFEB6523AFB53400830245 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		D9BFEB6723AFB63F00830245 /* SummaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPresenter.swift; sourceTree = "<group>"; };
 		D9BFEB6A23AFC7FA00830245 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
@@ -76,12 +76,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D90C71E523B1279A003F49AD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D9BFEB6923AFC7F000830245 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D90C71E623B127A1003F49AD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D9BFEB6023AFB1E400830245 /* Summary */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		D98273E123B115D5000FA3F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				D9BFEB6523AFB53400830245 /* SummaryViewModel.swift */,
-				D9BFEB6323AFB37100830245 /* MainSummaryView.swift */,
-				D98273E223B115F8000FA3F8 /* SummaryView.swift */,
+				D9BFEB6323AFB37100830245 /* SummaryView.swift */,
+				D98273E223B115F8000FA3F8 /* SummaryStackView.swift */,
 				D95018D223B0F0E7007C6D0A /* SummaryCardView.swift */,
 			);
 			path = View;
@@ -108,9 +124,8 @@
 		D9BFEB3323AFA6B700830245 /* loteria */ = {
 			isa = PBXGroup;
 			children = (
-				D9BFEB6923AFC7F000830245 /* Views */,
-				D9BFEB6123AFB1ED00830245 /* Main */,
-				D9BFEB6023AFB1E400830245 /* Summary */,
+				D90C71E623B127A1003F49AD /* Modules */,
+				D90C71E523B1279A003F49AD /* Common */,
 				D9BFEB5F23AFB1A500830245 /* App */,
 				D9BFEB5623AFA6E200830245 /* Repository */,
 				D9BFEB3A23AFA6B800830245 /* Assets.xcassets */,
@@ -151,6 +166,7 @@
 		D9BFEB5F23AFB1A500830245 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				D9BFEB3823AFA6B700830245 /* AppView.swift */,
 				D9BFEB3423AFA6B700830245 /* AppDelegate.swift */,
 				D9BFEB3623AFA6B700830245 /* SceneDelegate.swift */,
 			);
@@ -164,14 +180,6 @@
 				D9BFEB6723AFB63F00830245 /* SummaryPresenter.swift */,
 			);
 			path = Summary;
-			sourceTree = "<group>";
-		};
-		D9BFEB6123AFB1ED00830245 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				D9BFEB3823AFA6B700830245 /* MainView.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		D9BFEB6923AFC7F000830245 /* Views */ = {
@@ -284,15 +292,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9BFEB3523AFA6B700830245 /* AppDelegate.swift in Sources */,
-				D9BFEB6423AFB37100830245 /* MainSummaryView.swift in Sources */,
+				D9BFEB6423AFB37100830245 /* SummaryView.swift in Sources */,
 				D9BFEB6823AFB63F00830245 /* SummaryPresenter.swift in Sources */,
 				D9BFEB5E23AFB06700830245 /* LotteryStatus.swift in Sources */,
 				D9BFEB5823AFA6FB00830245 /* LotteryRepository.swift in Sources */,
-				D98273E323B115F8000FA3F8 /* SummaryView.swift in Sources */,
+				D98273E323B115F8000FA3F8 /* SummaryStackView.swift in Sources */,
 				D9BFEB5C23AFB04F00830245 /* LotterySummaryResponse.swift in Sources */,
 				D9BFEB6623AFB53400830245 /* SummaryViewModel.swift in Sources */,
 				D9BFEB3723AFA6B700830245 /* SceneDelegate.swift in Sources */,
-				D9BFEB3923AFA6B700830245 /* MainView.swift in Sources */,
+				D9BFEB3923AFA6B700830245 /* AppView.swift in Sources */,
 				D9BFEB6B23AFC7FA00830245 /* Spinner.swift in Sources */,
 				D95018D323B0F0E7007C6D0A /* SummaryCardView.swift in Sources */,
 			);

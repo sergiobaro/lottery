@@ -42,25 +42,23 @@ enum SummaryCardViewStyle: Int {
   case fifthPrize
   
   func titleFont() -> Font {
-    let fonts: [Self: Font] = [
-      .firstPrize: Font.system(size: 20.0).weight(.heavy),
-      .secondPrize: Font.system(size: 18.0).lowercaseSmallCaps().bold(),
-      .thirdPrize: Font.system(size: 16.0).lowercaseSmallCaps().bold(),
-      .forthPrize: Font.system(size: 14.0).lowercaseSmallCaps().bold(),
-      .fifthPrize: Font.system(size: 14.0).lowercaseSmallCaps()
-    ]
-    return fonts[self]!
+    switch self {
+    case .firstPrize: return Font.system(size: 24.0).weight(.heavy)
+    case .secondPrize: return Font.system(size: 20.0).bold()
+    case .thirdPrize: return Font.system(size: 28.0).bold()
+    case .forthPrize: return Font.system(size: 16.0).bold()
+    case .fifthPrize: return Font.system(size: 14.0).bold()
+    }
   }
   
   func numberFont() -> Font {
-    let fonts: [Self: Font] = [
-      .firstPrize: Font.system(size: 38.0).bold(),
-      .secondPrize: Font.system(size: 32.0).bold(),
-      .thirdPrize: Font.system(size: 28.0).bold(),
-      .forthPrize: Font.system(size: 26.0).bold().monospacedDigit(),
-      .fifthPrize: Font.system(size: 22.0).monospacedDigit(),
-    ]
-    return fonts[self]!
+    switch self {
+    case .firstPrize: return Font.system(size: 38.0).bold()
+    case .secondPrize: return Font.system(size: 32.0).bold()
+    case .thirdPrize: return Font.system(size: 28.0).bold()
+    case .forthPrize: return Font.system(size: 26.0).bold().monospacedDigit()
+    case .fifthPrize: return Font.system(size: 22.0).monospacedDigit()
+    }
   }
   
   func title() -> String {
@@ -68,7 +66,7 @@ enum SummaryCardViewStyle: Int {
       return "El Gordo".uppercased()
     }
     
-    return "\(self.rawValue)° Premio"
+    return "\(self.rawValue)° Premio".uppercased()
   }
   
   func numberOfColumns() -> Int {
