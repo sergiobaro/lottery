@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D90C71E823B12E41003F49AD /* LotterySearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C71E723B12E41003F49AD /* LotterySearchResponse.swift */; };
 		D95018D323B0F0E7007C6D0A /* SummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95018D223B0F0E7007C6D0A /* SummaryCardView.swift */; };
 		D98273E323B115F8000FA3F8 /* SummaryStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98273E223B115F8000FA3F8 /* SummaryStackView.swift */; };
 		D9BFEB3523AFA6B700830245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3423AFA6B700830245 /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D90C71E723B12E41003F49AD /* LotterySearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotterySearchResponse.swift; sourceTree = "<group>"; };
 		D95018D223B0F0E7007C6D0A /* SummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCardView.swift; sourceTree = "<group>"; };
 		D98273E223B115F8000FA3F8 /* SummaryStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryStackView.swift; sourceTree = "<group>"; };
 		D9BFEB3123AFA6B700830245 /* loteria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loteria.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 				D9BFEB5723AFA6FB00830245 /* LotteryRepository.swift */,
 				D9BFEB5D23AFB06700830245 /* LotteryStatus.swift */,
 				D9BFEB5B23AFB04F00830245 /* LotterySummaryResponse.swift */,
+				D90C71E723B12E41003F49AD /* LotterySearchResponse.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			files = (
 				D9BFEB3523AFA6B700830245 /* AppDelegate.swift in Sources */,
 				D9BFEB6423AFB37100830245 /* SummaryView.swift in Sources */,
+				D90C71E823B12E41003F49AD /* LotterySearchResponse.swift in Sources */,
 				D9BFEB6823AFB63F00830245 /* SummaryPresenter.swift in Sources */,
 				D9BFEB5E23AFB06700830245 /* LotteryStatus.swift in Sources */,
 				D9BFEB5823AFA6FB00830245 /* LotteryRepository.swift in Sources */,
