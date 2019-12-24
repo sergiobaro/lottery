@@ -45,7 +45,7 @@ enum SummaryCardViewStyle: Int {
     switch self {
     case .firstPrize: return Font.system(size: 24.0).weight(.heavy)
     case .secondPrize: return Font.system(size: 20.0).bold()
-    case .thirdPrize: return Font.system(size: 28.0).bold()
+    case .thirdPrize: return Font.system(size: 18.0).bold()
     case .forthPrize: return Font.system(size: 16.0).bold()
     case .fifthPrize: return Font.system(size: 14.0).bold()
     }

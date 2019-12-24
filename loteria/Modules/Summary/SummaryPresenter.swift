@@ -10,9 +10,19 @@ class SummaryPresenter: ObservableObject {
   private let repository = LotteryRepository()
   
   func viewDidAppear() {
+    self.loadSummary()
+  }
+  
+  func userDidRefresh() {
+    self.loadSummary()
+  }
+  
+  // MARK: - Private
+  
+  private func loadSummary() {
     self.isLoading = true
     repository.fetchSummary { response in
-      DispatchQueue.main.async { [weak self] in
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
         guard let self = self else { return }
         
         if let response = response {
@@ -25,8 +35,6 @@ class SummaryPresenter: ObservableObject {
       }
     }
   }
-  
-  // MARK: - Private
   
   private func map(response: LotterySummaryResponse) -> SummaryViewModel {
     return SummaryViewModel(
