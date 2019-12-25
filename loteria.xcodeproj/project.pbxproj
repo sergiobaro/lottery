@@ -463,6 +463,7 @@
 				DEVELOPMENT_TEAM = U45ZNT55FZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = loteria/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,7 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sbs.loteria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -483,6 +484,7 @@
 				DEVELOPMENT_TEAM = U45ZNT55FZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = loteria/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,7 +492,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sbs.loteria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
