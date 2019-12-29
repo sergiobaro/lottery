@@ -4,8 +4,8 @@ import Combine
 
 class SummaryPresenter: ObservableObject {
   
-  @Published var viewModel: SummaryViewModel = .empty()
-  @Published var isLoading: Bool = false
+  @Published var viewModel = SummaryViewModel.empty()
+  @Published var isLoading = false
   
   private let repository = LotteryRepository()
   
@@ -22,7 +22,7 @@ class SummaryPresenter: ObservableObject {
   private func loadSummary() {
     self.isLoading = true
     repository.fetchSummary { response in
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+      DispatchQueue.main.async { [weak self] in
         guard let self = self else { return }
         
         if let response = response {
