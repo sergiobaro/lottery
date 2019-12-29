@@ -6,30 +6,23 @@ struct SearchView: View {
   var body: some View {
     ZStack {
       VStack {
-        HStack {
-          TextField("Número", text: $presenter.searchText)
-            .keyboardType(.numberPad)
-            .padding(5.0)
-            .disabled(self.presenter.isLoading)
-          
-          Button(action: {
+        SearchFormView(
+          searchText: $presenter.searchText,
+          amountText: $presenter.amountText,
+          disabled: $presenter.searchDisabled) {
             self.presenter.userDidSearch()
-          }) {
-            Image(systemName: "magnifyingglass.circle")
-              .foregroundColor(
-                presenter.searchDisabled ? Color.gray : Color.black
-            )
-          }
-          .font(Font.system(size: 22.0))
-          .disabled(self.presenter.searchDisabled || self.presenter.isLoading)
         }
-        .accentColor(.black)
-        .padding()
         
-        Text(self.presenter.viewModel.message)
+        Divider()
+          .padding()
+        
+        SearchResultView(viewModel: $presenter.viewModel)
         
         Spacer()
       }
+      .accentColor(.black)
+      .padding()
+      
       if self.presenter.isLoading {
         Spinner(isAnimating: true)
       }
