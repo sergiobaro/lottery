@@ -8,7 +8,7 @@ class SearchPresenter: ObservableObject {
   @Published var isLoading = false
   @Published var viewModel = SearchViewModel.empty()
   
-  private var repository = LotteryRepository()
+  private var repository = LotteryRepositoryBuilder.christmas()
   private var searchTextCancellable: AnyCancellable!
   
   init() {

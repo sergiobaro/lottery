@@ -1,7 +1,5 @@
 import Foundation
 
-// {'numero':NUMERO,'premio':PREMIO_AL_DECIMO,'timestamp':TS_ACTUALIZACION,'status':ESTADO_DEL_SORTEO,'error':0}
-
 struct LotterySearchResponse: Decodable {
   
   let timestamp: Int
@@ -10,5 +8,19 @@ struct LotterySearchResponse: Decodable {
   
   let numero: Int
   let premio: Int
+  
+  static func example() -> Self {
+    let response = """
+      {
+        "numero": 0,
+        "premio": 0,
+        "timestamp": 123456789,
+        "status": 0,
+        "error": 0
+      }
+    """
+      
+    return try! JSONDecoder().decode(Self.self, from: response.data(using: .utf8)!)
+  }
   
 }

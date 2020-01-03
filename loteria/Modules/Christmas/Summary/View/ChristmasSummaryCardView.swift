@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct SummaryCardView: View {
-  let style: SummaryCardViewStyle
+struct ChristmasSummaryCardView: View {
+  let style: ChristmasSummaryCardViewStyle
   let numbers: [String]
   
   var body: some View {
@@ -34,7 +34,7 @@ struct SummaryCardView: View {
   }
 }
 
-enum SummaryCardViewStyle: Int {
+enum ChristmasSummaryCardViewStyle: Int {
   case firstPrize = 1
   case secondPrize
   case thirdPrize
@@ -78,14 +78,14 @@ enum SummaryCardViewStyle: Int {
   }
 }
 
-struct SummaryCardView_Previews: PreviewProvider {
+struct ChristmasSummaryCardView_Previews: PreviewProvider {
   static var previews: some View {
     Group {
-      SummaryCardView(style: .firstPrize, numbers: ["123456"])
-      SummaryCardView(style: .secondPrize, numbers: ["123456"])
-      SummaryCardView(style: .thirdPrize, numbers: ["123456"])
-      SummaryCardView(style: .forthPrize, numbers: ["123456", "234567"])
-      SummaryCardView(style: .fifthPrize, numbers: ["123456", "234567", "345678", "456789", "567890", "678901", "789012", "890123"])
+      ChristmasSummaryCardView(style: .firstPrize, numbers: ["123456"])
+      ChristmasSummaryCardView(style: .secondPrize, numbers: ["123456"])
+      ChristmasSummaryCardView(style: .thirdPrize, numbers: ["123456"])
+      ChristmasSummaryCardView(style: .forthPrize, numbers: ["123456", "234567"])
+      ChristmasSummaryCardView(style: .fifthPrize, numbers: ["123456", "234567", "345678", "456789", "567890", "678901", "789012", "890123"])
     }
     .previewLayout(.fixed(width: 500, height: 200))
   }

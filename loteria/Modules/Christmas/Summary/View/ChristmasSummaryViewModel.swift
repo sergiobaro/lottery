@@ -1,6 +1,6 @@
 import Foundation
 
-struct SummaryViewModel {
+struct ChristmasSummaryViewModel {
   
   let firstPrize: String
   let secondPrize: String

@@ -1,17 +1,35 @@
 import Foundation
 
-fileprivate let ChristmasLottery = "https://api.elpais.com/ws/LoteriaNavidadPremiados"
-fileprivate let ChildrenLottery = "http://api.elpais.com/ws/LoteriaNinoPremiados"
+private let ChristmasLotteryUrl = "https://api.elpais.com/ws/LoteriaNavidadPremiados"
+private let ChildLotteryUrl = "https://api.elpais.com/ws/LoteriaNinoPremiados"
 
-class LotteryRepository {
+class LotteryRepositoryBuilder {
   
-  func fetchSummary(completion: @escaping (LotterySummaryResponse?) -> ()) {
+  static func christmas() -> LotteryRepository<ChristmasSummaryResponse> {
+    return LotteryRepository<ChristmasSummaryResponse>(url: ChristmasLotteryUrl)
+  }
+  
+  static func child() -> LotteryRepository<ChildSummaryResponse> {
+    return LotteryRepository<ChildSummaryResponse>(url: ChildLotteryUrl)
+  }
+  
+}
+
+class LotteryRepository<SummaryResponse: Decodable> {
+  
+  private let url: String
+  
+  init(url: String) {
+    self.url = url
+  }
+  
+  func fetchSummary(completion: @escaping (SummaryResponse?) -> ()) {
     guard let url = self.url(with: "resumen") else {
       completion(nil)
       return
     }
     
-    self.perform(url: url, responseType: LotterySummaryResponse.self) { (response) in
+    self.perform(url: url, responseType: SummaryResponse.self) { (response) in
       completion(response)
     }
   }
@@ -27,10 +45,12 @@ class LotteryRepository {
     }
   }
   
-  // MARK: - Private
+}
+
+private extension LotteryRepository {
   
   private func url(with number: String) -> URL? {
-    var components = URLComponents(string: ChristmasLottery)
+    var components = URLComponents(string: self.url)
     components?.queryItems = [
       URLQueryItem(name: "n", value: number)
     ]

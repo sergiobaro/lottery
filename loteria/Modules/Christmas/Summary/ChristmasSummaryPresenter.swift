@@ -2,12 +2,12 @@ import Foundation
 import SwiftUI
 import Combine
 
-class SummaryPresenter: ObservableObject {
+class ChristmasSummaryPresenter: ObservableObject {
   
-  @Published var viewModel = SummaryViewModel.empty()
+  @Published var viewModel = ChristmasSummaryViewModel.empty()
   @Published var isLoading = false
   
-  private let repository = LotteryRepository()
+  private let repository = LotteryRepositoryBuilder.christmas()
   
   func viewDidAppear() {
     self.loadSummary()
@@ -36,8 +36,8 @@ class SummaryPresenter: ObservableObject {
     }
   }
   
-  private func map(response: LotterySummaryResponse) -> SummaryViewModel {
-    return SummaryViewModel(
+  private func map(response: ChristmasSummaryResponse) -> ChristmasSummaryViewModel {
+    return ChristmasSummaryViewModel(
       firstPrize: self.map(number: response.numero1),
       secondPrize: self.map(number: response.numero2),
       thirdPrize: self.map(number: response.numero3),

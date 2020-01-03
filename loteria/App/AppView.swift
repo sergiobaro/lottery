@@ -2,7 +2,17 @@ import SwiftUI
 
 struct AppView: View {
   var body: some View {
-    SummaryView()
+    TabView {
+      ChristmasSummaryView()
+        .tabItem {
+          Text("Navidad")
+        }
+      
+      ChildSummaryView()
+        .tabItem {
+          Text("El Niño")
+        }
+    }
   }
 }
 
