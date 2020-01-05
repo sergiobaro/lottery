@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D90C71E823B12E41003F49AD /* LotterySearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C71E723B12E41003F49AD /* LotterySearchResponse.swift */; };
+		D923B78023C1CD7F0027350B /* LotteryRepositoryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D923B77F23C1CD7F0027350B /* LotteryRepositoryBuilder.swift */; };
+		D923B78223C1CD9E0027350B /* LotteryStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D923B78123C1CD9E0027350B /* LotteryStatus.swift */; };
 		D94D8A9123B4A474006175C1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D8A9023B4A474006175C1 /* SearchView.swift */; };
 		D94D8A9323B4A6BC006175C1 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D8A9223B4A6BC006175C1 /* SearchPresenter.swift */; };
 		D95018D323B0F0E7007C6D0A /* ChristmasSummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95018D223B0F0E7007C6D0A /* ChristmasSummaryCardView.swift */; };
@@ -28,7 +30,6 @@
 		D9BFEB5823AFA6FB00830245 /* LotteryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB5723AFA6FB00830245 /* LotteryRepository.swift */; };
 		D9BFEB5A23AFA91A00830245 /* LotteryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB5923AFA91900830245 /* LotteryRepositoryTests.swift */; };
 		D9BFEB5C23AFB04F00830245 /* ChristmasSummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB5B23AFB04F00830245 /* ChristmasSummaryResponse.swift */; };
-		D9BFEB5E23AFB06700830245 /* LotteryStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB5D23AFB06700830245 /* LotteryStatus.swift */; };
 		D9BFEB6423AFB37100830245 /* ChristmasSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6323AFB37100830245 /* ChristmasSummaryView.swift */; };
 		D9BFEB6623AFB53400830245 /* ChristmasSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6523AFB53400830245 /* ChristmasSummaryViewModel.swift */; };
 		D9BFEB6823AFB63F00830245 /* ChristmasSummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6723AFB63F00830245 /* ChristmasSummaryPresenter.swift */; };
@@ -47,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		D90C71E723B12E41003F49AD /* LotterySearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotterySearchResponse.swift; sourceTree = "<group>"; };
+		D923B77F23C1CD7F0027350B /* LotteryRepositoryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryRepositoryBuilder.swift; sourceTree = "<group>"; };
+		D923B78123C1CD9E0027350B /* LotteryStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryStatus.swift; sourceTree = "<group>"; };
 		D94D8A9023B4A474006175C1 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D94D8A9223B4A6BC006175C1 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		D95018D223B0F0E7007C6D0A /* ChristmasSummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasSummaryCardView.swift; sourceTree = "<group>"; };
@@ -71,7 +74,6 @@
 		D9BFEB5723AFA6FB00830245 /* LotteryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryRepository.swift; sourceTree = "<group>"; };
 		D9BFEB5923AFA91900830245 /* LotteryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryRepositoryTests.swift; sourceTree = "<group>"; };
 		D9BFEB5B23AFB04F00830245 /* ChristmasSummaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasSummaryResponse.swift; sourceTree = "<group>"; };
-		D9BFEB5D23AFB06700830245 /* LotteryStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryStatus.swift; sourceTree = "<group>"; };
 		D9BFEB6323AFB37100830245 /* ChristmasSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasSummaryView.swift; sourceTree = "<group>"; };
 		D9BFEB6523AFB53400830245 /* ChristmasSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasSummaryViewModel.swift; sourceTree = "<group>"; };
 		D9BFEB6723AFB63F00830245 /* ChristmasSummaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasSummaryPresenter.swift; sourceTree = "<group>"; };
@@ -112,6 +114,17 @@
 				D98F1A8323BFBDF900649778 /* Christmas */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		D923B77E23C1CD6A0027350B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D923B78123C1CD9E0027350B /* LotteryStatus.swift */,
+				D9BFEB5B23AFB04F00830245 /* ChristmasSummaryResponse.swift */,
+				D98F1A8823BFC07000649778 /* ChildSummaryResponse.swift */,
+				D90C71E723B12E41003F49AD /* LotterySearchResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D94D8A8E23B4A465006175C1 /* Search */ = {
@@ -232,10 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				D9BFEB5723AFA6FB00830245 /* LotteryRepository.swift */,
-				D9BFEB5D23AFB06700830245 /* LotteryStatus.swift */,
-				D9BFEB5B23AFB04F00830245 /* ChristmasSummaryResponse.swift */,
-				D98F1A8823BFC07000649778 /* ChildSummaryResponse.swift */,
-				D90C71E723B12E41003F49AD /* LotterySearchResponse.swift */,
+				D923B77F23C1CD7F0027350B /* LotteryRepositoryBuilder.swift */,
+				D923B77E23C1CD6A0027350B /* Model */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -379,13 +390,14 @@
 				D980E08D23B8A46300749BBA /* SearchFormView.swift in Sources */,
 				D90C71E823B12E41003F49AD /* LotterySearchResponse.swift in Sources */,
 				D9BFEB6823AFB63F00830245 /* ChristmasSummaryPresenter.swift in Sources */,
-				D9BFEB5E23AFB06700830245 /* LotteryStatus.swift in Sources */,
+				D923B78023C1CD7F0027350B /* LotteryRepositoryBuilder.swift in Sources */,
 				D9BFEB5823AFA6FB00830245 /* LotteryRepository.swift in Sources */,
 				D98273E323B115F8000FA3F8 /* ChristmasSummaryStackView.swift in Sources */,
 				D9BFEB5C23AFB04F00830245 /* ChristmasSummaryResponse.swift in Sources */,
 				D9BFEB6623AFB53400830245 /* ChristmasSummaryViewModel.swift in Sources */,
 				D9BFEB3723AFA6B700830245 /* SceneDelegate.swift in Sources */,
 				D980E08923B89D6800749BBA /* String+Extensions.swift in Sources */,
+				D923B78223C1CD9E0027350B /* LotteryStatus.swift in Sources */,
 				D96A6D7323B927A2002925F4 /* Constants.swift in Sources */,
 				D94D8A9123B4A474006175C1 /* SearchView.swift in Sources */,
 				D9BFEB3923AFA6B700830245 /* AppView.swift in Sources */,

@@ -38,18 +38,18 @@ class ChristmasSummaryPresenter: ObservableObject {
   
   private func map(response: ChristmasSummaryResponse) -> ChristmasSummaryViewModel {
     return ChristmasSummaryViewModel(
-      firstPrize: self.map(number: response.numero1),
-      secondPrize: self.map(number: response.numero2),
-      thirdPrize: self.map(number: response.numero3),
-      forthPrizes: [self.map(number: response.numero4), self.map(number: response.numero5)],
-      fifthPrizes: [self.map(number: response.numero6),
-                    self.map(number: response.numero7),
-                    self.map(number: response.numero8),
-                    self.map(number: response.numero9),
-                    self.map(number: response.numero10),
-                    self.map(number: response.numero11),
-                    self.map(number: response.numero12),
-                    self.map(number: response.numero13),
+      firstPrize: self.map(number: response.number1),
+      secondPrize: self.map(number: response.number2),
+      thirdPrize: self.map(number: response.number3),
+      forthPrizes: [self.map(number: response.number4), self.map(number: response.number5)],
+      fifthPrizes: [self.map(number: response.number6),
+                    self.map(number: response.number7),
+                    self.map(number: response.number8),
+                    self.map(number: response.number9),
+                    self.map(number: response.number10),
+                    self.map(number: response.number11),
+                    self.map(number: response.number12),
+                    self.map(number: response.number13),
       ]
     )
   }

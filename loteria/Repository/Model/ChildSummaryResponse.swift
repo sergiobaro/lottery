@@ -6,13 +6,27 @@ struct ChildSummaryResponse: Decodable {
   let status: LotteryStatus
   let error: Int
   
-  let premio1: Int
-  let premio2: Int
-  let premio3: Int
-  let extracciones4cifras: [String]
-  let extracciones3cifras: [String]
-  let extracciones2cifras: [String]
-  let reintegros: [Int]
+  let prize1: Int
+  let prize2: Int
+  let prize3: Int
+  let extractions2digits: [String]
+  let extractions3digits: [String]
+  let extractions4digits: [String]
+  let repayments: [Int]
+  
+  enum CodingKeys: String, CodingKey {
+    case timestamp
+    case status
+    case error
+    
+    case prize1 = "premio1"
+    case prize2 = "premio2"
+    case prize3 = "premio3"
+    case extractions2digits = "extracciones2cifras"
+    case extractions3digits = "extracciones3cifras"
+    case extractions4digits = "extracciones4cifras"
+    case repayments = "reintegros"
+  }
   
   static func example() -> Self {
     let response = """

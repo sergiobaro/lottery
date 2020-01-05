@@ -6,8 +6,16 @@ struct LotterySearchResponse: Decodable {
   let status: LotteryStatus
   let error: Int
   
-  let numero: Int
-  let premio: Int
+  let number: Int
+  let prize: Int
+  
+  enum CodingKeys: String, CodingKey {
+    case timestamp
+    case status
+    case error
+    case number = "numero"
+    case prize = "premio"
+  }
   
   static func example() -> Self {
     let response = """

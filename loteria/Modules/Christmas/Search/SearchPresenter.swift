@@ -55,9 +55,9 @@ private extension SearchPresenter {
   
   func map(response: LotterySearchResponse) -> SearchViewModel {
     return SearchViewModel(
-      prizeMessage: self.mapPrizeMessage(prize: response.premio),
+      prizeMessage: self.mapPrizeMessage(prize: response.prize),
       message: self.mapMessage(
-        prize: response.premio,
+        prize: response.prize,
         amount: Int(self.amountText) ?? Constants.amountPerTenth)
     )
   }

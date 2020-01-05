@@ -25,7 +25,7 @@ class LotteryRepositoryTests: XCTestCase {
     
     self.christmasRepository.search(number: 750) { (response) in
       XCTAssertNotNil(response)
-      XCTAssertEqual(response?.numero, 750)
+      XCTAssertEqual(response?.number, 750)
       XCTAssertEqual(response?.error, 0)
       
       expectation.fulfill()
@@ -51,7 +51,7 @@ class LotteryRepositoryTests: XCTestCase {
     
     self.childRepository.search(number: 750) { (response) in
       XCTAssertNotNil(response)
-      XCTAssertEqual(response?.numero, 750)
+      XCTAssertEqual(response?.number, 750)
       XCTAssertEqual(response?.error, 0)
       
       expectation.fulfill()
