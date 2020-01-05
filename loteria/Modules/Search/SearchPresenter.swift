@@ -10,12 +10,15 @@ class SearchPresenter: ObservableObject {
   
   private var repository = LotteryRepositoryBuilder.christmas()
   private var searchTextCancellable: AnyCancellable!
+  private var cancellables = Set<AnyCancellable>()
   
   init() {
     let invalidCharacters = CharacterSet(charactersIn: "1234567890").inverted
     
-    searchTextCancellable = $searchText.removeDuplicates().sink { text in
-      DispatchQueue.main.async {
+    $searchText
+      .removeDuplicates()
+      .receive(on: DispatchQueue.main)
+      .sink { text in
         let filteredText = text
           .components(separatedBy: invalidCharacters)
           .joined()
@@ -24,11 +27,7 @@ class SearchPresenter: ObservableObject {
         self.searchDisabled = filteredText.isEmpty
         self.searchText = filteredText
       }
-    }
-  }
-  
-  deinit {
-    searchTextCancellable.cancel()
+      .store(in: &cancellables)
   }
   
   func userDidSearch() {
@@ -37,23 +36,35 @@ class SearchPresenter: ObservableObject {
     self.viewModel = .empty()
     
     let number = self.searchText.asInt()
-    self.repository.search(number: number) { (response) in
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
-        guard let self = self else { return }
-        
-        self.isLoading = false
-        self.searchDisabled = false
-        if let response = response {
+    
+    self.repository.search(number: number)
+      .receive(on: DispatchQueue.main)
+      .sink(
+        receiveCompletion: { [weak self] value in
+          guard let self = self else { return }
+          switch value {
+          case .failure:
+            self.viewModel = .empty()
+          case .finished:
+            self.isLoading = false
+          }
+        },
+        receiveValue: { [weak self] response in
+          guard let self = self else { return }
           self.viewModel = self.map(response: response)
         }
-      }
-    }
+      )
+      .store(in: &cancellables)
   }
 }
 
 private extension SearchPresenter {
   
-  func map(response: LotterySearchResponse) -> SearchViewModel {
+  func map(response: LotterySearchResponse?) -> SearchViewModel {
+    guard let response = response else {
+      return .empty()
+    }
+    
     return SearchViewModel(
       prizeMessage: self.mapPrizeMessage(prize: response.prize),
       message: self.mapMessage(

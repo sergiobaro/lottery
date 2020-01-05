@@ -6,7 +6,10 @@ enum LotteryRepositoryError: Error {
   case network(_ description: String)
 }
 
-class LotteryRepository<SummaryResponse: Decodable> {
+class LotteryRepository<
+  SummaryResponse: Decodable,
+  SearchResponse: Decodable
+> {
   
   private let url: String
   private let session = URLSession.shared
@@ -26,15 +29,15 @@ class LotteryRepository<SummaryResponse: Decodable> {
       .eraseToAnyPublisher()
   }
   
-  func search(number: Int, completion: @escaping (LotterySearchResponse?) -> ()) {
+  func search(number: Int) -> AnyPublisher<SearchResponse?, LotteryRepositoryError> {
     guard let url = self.url(with: String(number)) else {
-      completion(nil)
-      return
+      return Fail(error: .url("Couldn't build url with number: \(number)")).eraseToAnyPublisher()
     }
     
-    self.perform(url: url, responseType: LotterySearchResponse.self) { (response) in
-      completion(response)
-    }
+    return self.session.dataTaskPublisher(for: url)
+      .mapError { .network($0.localizedDescription) }
+      .map { self.parse(data: $0.data, type: SearchResponse.self) }
+      .eraseToAnyPublisher()
   }
   
 }
@@ -48,14 +51,6 @@ private extension LotteryRepository {
     ]
     
     return components?.url
-  }
-  
-  private func perform<T: Decodable>(url: URL, responseType: T.Type, completion: @escaping (T?) -> ()) {
-    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-      let response = self.parse(data: data, type: responseType)
-      completion(response)
-    }
-    task.resume()
   }
   
   private func parse<T: Decodable>(data: Data?, type: T.Type) -> T? {
