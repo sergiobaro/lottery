@@ -7,9 +7,9 @@ class ChristmasSummaryPresenter: ObservableObject {
   @Published var viewModel = ChristmasSummaryViewModel.empty()
   @Published var isLoading = false
   
+  @Inject("ChristmasLotteryRepository") private var repository: ChristmasLotteryRepository
   private var firstAppear = true
   private var cancellables = Set<AnyCancellable>()
-  private let repository = LotteryRepositoryBuilder.christmas()
   
   func viewDidAppear() {
     if self.firstAppear {

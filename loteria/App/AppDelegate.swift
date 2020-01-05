@@ -4,7 +4,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    Dependencies.shared.add(name: "ChristmasLotteryRepository", value: LotteryRepositoryBuilder.christmas())
+    Dependencies.shared.add(name: "ChildLotteryRepository", value: LotteryRepositoryBuilder.child())
+    
     return true
   }
   

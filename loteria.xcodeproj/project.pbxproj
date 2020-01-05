@@ -22,6 +22,7 @@
 		D98273E323B115F8000FA3F8 /* ChristmasSummaryStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98273E223B115F8000FA3F8 /* ChristmasSummaryStackView.swift */; };
 		D98F1A8723BFBFA500649778 /* ChildSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F1A8623BFBFA500649778 /* ChildSummaryView.swift */; };
 		D98F1A8923BFC07000649778 /* ChildSummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F1A8823BFC07000649778 /* ChildSummaryResponse.swift */; };
+		D9946C0123C1FC7500ED5EB8 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9946C0023C1FC7500ED5EB8 /* Inject.swift */; };
 		D9BFEB3523AFA6B700830245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3423AFA6B700830245 /* AppDelegate.swift */; };
 		D9BFEB3723AFA6B700830245 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3623AFA6B700830245 /* SceneDelegate.swift */; };
 		D9BFEB3923AFA6B700830245 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3823AFA6B700830245 /* AppView.swift */; };
@@ -63,6 +64,7 @@
 		D98273E223B115F8000FA3F8 /* ChristmasSummaryStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasSummaryStackView.swift; sourceTree = "<group>"; };
 		D98F1A8623BFBFA500649778 /* ChildSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSummaryView.swift; sourceTree = "<group>"; };
 		D98F1A8823BFC07000649778 /* ChildSummaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSummaryResponse.swift; sourceTree = "<group>"; };
+		D9946C0023C1FC7500ED5EB8 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		D9BFEB3123AFA6B700830245 /* loteria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loteria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9BFEB3423AFA6B700830245 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9BFEB3623AFA6B700830245 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		D90C71E523B1279A003F49AD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D9946BFF23C1FC6400ED5EB8 /* Inject */,
 				D980E08723B89D5C00749BBA /* Extensions */,
 				D9BFEB6923AFC7F000830245 /* Views */,
 			);
@@ -191,6 +194,14 @@
 				D98F1A8623BFBFA500649778 /* ChildSummaryView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D9946BFF23C1FC6400ED5EB8 /* Inject */ = {
+			isa = PBXGroup;
+			children = (
+				D9946C0023C1FC7500ED5EB8 /* Inject.swift */,
+			);
+			path = Inject;
 			sourceTree = "<group>";
 		};
 		D9BFEB2823AFA6B700830245 = {
@@ -398,6 +409,7 @@
 				D923B78423C1D91B0027350B /* SummaryButtons.swift in Sources */,
 				D98273E323B115F8000FA3F8 /* ChristmasSummaryStackView.swift in Sources */,
 				D9BFEB5C23AFB04F00830245 /* ChristmasSummaryResponse.swift in Sources */,
+				D9946C0123C1FC7500ED5EB8 /* Inject.swift in Sources */,
 				D9BFEB6623AFB53400830245 /* ChristmasSummaryViewModel.swift in Sources */,
 				D9BFEB3723AFA6B700830245 /* SceneDelegate.swift in Sources */,
 				D980E08923B89D6800749BBA /* String+Extensions.swift in Sources */,
