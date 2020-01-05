@@ -24,7 +24,7 @@ struct SearchFormView: View {
       
       Button(action: self.action) {
         Text("Comprobar")
-          .font(Font.system(size: 22.0))
+          .font(Font.system(size: 18.0))
           .padding([.top, .bottom], 5.0)
           .padding([.leading, .trailing], 12.0)
           .foregroundColor(Color.white)

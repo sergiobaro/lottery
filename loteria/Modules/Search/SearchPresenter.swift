@@ -18,7 +18,9 @@ class SearchPresenter: ObservableObject {
     $searchText
       .removeDuplicates()
       .receive(on: DispatchQueue.main)
-      .sink { text in
+      .sink { [weak self] text in
+        guard let self = self else { return }
+        
         let filteredText = text
           .components(separatedBy: invalidCharacters)
           .joined()
@@ -46,6 +48,7 @@ class SearchPresenter: ObservableObject {
           case .failure:
             self.viewModel = .empty()
           case .finished:
+            self.searchDisabled = false
             self.isLoading = false
           }
         },
