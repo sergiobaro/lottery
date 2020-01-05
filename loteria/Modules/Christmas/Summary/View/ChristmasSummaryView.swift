@@ -12,6 +12,7 @@ struct ChristmasSummaryView: View {
         if !self.presenter.isLoading {
           ChristmasSummaryStackView(viewModel: self.presenter.viewModel)
         }
+        
         Spacer()
       }
       if self.presenter.isLoading {
@@ -39,7 +40,8 @@ struct ChristmasSummaryView: View {
     .accentColor(
       self.presenter.isLoading ? .gray : .black
     )
-    .padding()
+    .padding(.top, 15.0)
+    .padding([.leading, .trailing], 15.0)
   }
   
   private func button(symbol symbolName: String, action: @escaping () -> ()) -> some View {

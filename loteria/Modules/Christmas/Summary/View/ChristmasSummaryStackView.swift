@@ -10,8 +10,14 @@ struct ChristmasSummaryStackView: View {
       ChristmasSummaryCardView(style: .thirdPrize, numbers: [viewModel.thirdPrize])
       ChristmasSummaryCardView(style: .forthPrize, numbers: viewModel.forthPrizes)
       ChristmasSummaryCardView(style: .fifthPrize, numbers: viewModel.fifthPrizes)
+
+      Divider()
+      Text(viewModel.statusMessage)
+        .font(.headline)
+      Text(viewModel.lastUpdateMessage)
+        .font(.footnote)
     }
-    .padding()
+    .padding(10.0)
   }
 }
 

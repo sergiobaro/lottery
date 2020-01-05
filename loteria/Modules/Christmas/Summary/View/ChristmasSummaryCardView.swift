@@ -35,7 +35,7 @@ struct ChristmasSummaryCardView: View {
 }
 
 enum ChristmasSummaryCardViewStyle: Int {
-  case firstPrize = 1
+  case firstPrize
   case secondPrize
   case thirdPrize
   case forthPrize

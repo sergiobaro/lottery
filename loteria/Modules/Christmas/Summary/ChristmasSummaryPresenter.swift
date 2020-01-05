@@ -50,7 +50,9 @@ class ChristmasSummaryPresenter: ObservableObject {
                     self.map(number: response.number11),
                     self.map(number: response.number12),
                     self.map(number: response.number13),
-      ]
+      ],
+      statusMessage: self.map(status: response.status),
+      lastUpdateMessage: self.map(lastUpdate: response.timestamp)
     )
   }
   
@@ -58,4 +60,20 @@ class ChristmasSummaryPresenter: ObservableObject {
     return String(format: "%05d", number)
   }
   
+  private func map(status: LotteryStatus) -> String {
+    switch status {
+      case .notStarted: return "El sorteo no ha comenzado"
+      case .started: return "El sorteo ya ha comenzado"
+      case .finished, .finishedWithPDF, .finishedOfficial: return "El sorteo ha terminado"
+    }
+  }
+  
+  private func map(lastUpdate: Int) -> String {
+    let date = Date(timeIntervalSince1970: TimeInterval(lastUpdate))
+    let df = DateFormatter()
+    df.timeStyle = .short
+    df.dateStyle = .short
+    
+    return "Última actualización: " + df.string(from: date)
+  }
 }

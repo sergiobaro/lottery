@@ -110,6 +110,7 @@
 		D90C71E623B127A1003F49AD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D94D8A8E23B4A465006175C1 /* Search */,
 				D98F1A8423BFBF9100649778 /* Child */,
 				D98F1A8323BFBDF900649778 /* Christmas */,
 			);
@@ -169,7 +170,6 @@
 		D98F1A8323BFBDF900649778 /* Christmas */ = {
 			isa = PBXGroup;
 			children = (
-				D94D8A8E23B4A465006175C1 /* Search */,
 				D9BFEB6023AFB1E400830245 /* Summary */,
 			);
 			path = Christmas;
