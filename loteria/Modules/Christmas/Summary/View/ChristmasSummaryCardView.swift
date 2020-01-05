@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ChristmasSummaryCardView: View {
+  
   let style: ChristmasSummaryCardViewStyle
   let numbers: [String]
   

@@ -1,22 +1,29 @@
 import Foundation
+import Combine
+
+enum LotteryRepositoryError: Error {
+  case url(_ description: String)
+  case network(_ description: String)
+}
 
 class LotteryRepository<SummaryResponse: Decodable> {
   
   private let url: String
+  private let session = URLSession.shared
   
   init(url: String) {
     self.url = url
   }
   
-  func fetchSummary(completion: @escaping (SummaryResponse?) -> ()) {
+  func fetchSummary() -> AnyPublisher<SummaryResponse?, LotteryRepositoryError> {
     guard let url = self.url(with: "resumen") else {
-      completion(nil)
-      return
+      return Fail(error: .url("Couldn't build url")).eraseToAnyPublisher()
     }
     
-    self.perform(url: url, responseType: SummaryResponse.self) { (response) in
-      completion(response)
-    }
+    return self.session.dataTaskPublisher(for: url)
+      .mapError { .network($0.localizedDescription) }
+      .map { self.parse(data: $0.data, type: SummaryResponse.self) }
+      .eraseToAnyPublisher()
   }
   
   func search(number: Int, completion: @escaping (LotterySearchResponse?) -> ()) {

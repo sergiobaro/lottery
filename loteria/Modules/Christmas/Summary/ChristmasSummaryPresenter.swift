@@ -7,10 +7,15 @@ class ChristmasSummaryPresenter: ObservableObject {
   @Published var viewModel = ChristmasSummaryViewModel.empty()
   @Published var isLoading = false
   
+  private var firstAppear = true
+  private var cancellables = Set<AnyCancellable>()
   private let repository = LotteryRepositoryBuilder.christmas()
   
   func viewDidAppear() {
-    self.loadSummary()
+    if self.firstAppear {
+      self.firstAppear = false
+      self.loadSummary()
+    }
   }
   
   func userDidRefresh() {
@@ -22,22 +27,31 @@ class ChristmasSummaryPresenter: ObservableObject {
   private func loadSummary() {
     self.isLoading = true
     
-    self.repository.fetchSummary { response in
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
-        guard let self = self else { return }
-        
-        if let response = response {
+    self.repository.fetchSummary()
+      .receive(on: DispatchQueue.main)
+      .sink(
+        receiveCompletion: { [weak self] value in
+          guard let self = self else { return }
+          switch value {
+          case .failure:
+            self.viewModel = .empty()
+          case .finished:
+            self.isLoading = false
+          }
+        },
+        receiveValue: { [weak self] response in
+          guard let self = self else { return }
           self.viewModel = self.map(response: response)
-        } else {
-          self.viewModel = .empty()
         }
-        
-        self.isLoading = false
-      }
-    }
+      )
+      .store(in: &cancellables)
   }
   
-  private func map(response: ChristmasSummaryResponse) -> ChristmasSummaryViewModel {
+  private func map(response: ChristmasSummaryResponse?) -> ChristmasSummaryViewModel {
+    guard let response = response else {
+      return .empty()
+    }
+    
     return ChristmasSummaryViewModel(
       firstPrize: self.map(number: response.number1),
       secondPrize: self.map(number: response.number2),

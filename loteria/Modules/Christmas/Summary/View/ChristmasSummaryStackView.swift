@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ChristmasSummaryStackView: View {
+  
   let viewModel: ChristmasSummaryViewModel
   
   var body: some View {

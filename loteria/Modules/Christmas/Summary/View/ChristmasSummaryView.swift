@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ChristmasSummaryView: View {
+  
   @ObservedObject private var presenter = ChristmasSummaryPresenter()
   
   var body: some View {
