@@ -25,6 +25,8 @@
 		D98F1A8923BFC07000649778 /* ChildSummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F1A8823BFC07000649778 /* ChildSummaryResponse.swift */; };
 		D9946C0123C1FC7500ED5EB8 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9946C0023C1FC7500ED5EB8 /* Inject.swift */; };
 		D9946C0323C205AB00ED5EB8 /* ChildSummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9946C0223C205AB00ED5EB8 /* ChildSummaryPresenter.swift */; };
+		D996196123C32924003E5EDD /* ChildCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D996196023C32924003E5EDD /* ChildCardView.swift */; };
+		D996196323C3397E003E5EDD /* ChildStackSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D996196223C3397E003E5EDD /* ChildStackSummaryView.swift */; };
 		D9BFEB3523AFA6B700830245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3423AFA6B700830245 /* AppDelegate.swift */; };
 		D9BFEB3723AFA6B700830245 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3623AFA6B700830245 /* SceneDelegate.swift */; };
 		D9BFEB3923AFA6B700830245 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB3823AFA6B700830245 /* AppView.swift */; };
@@ -69,6 +71,8 @@
 		D98F1A8823BFC07000649778 /* ChildSummaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSummaryResponse.swift; sourceTree = "<group>"; };
 		D9946C0023C1FC7500ED5EB8 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		D9946C0223C205AB00ED5EB8 /* ChildSummaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSummaryPresenter.swift; sourceTree = "<group>"; };
+		D996196023C32924003E5EDD /* ChildCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCardView.swift; sourceTree = "<group>"; };
+		D996196223C3397E003E5EDD /* ChildStackSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildStackSummaryView.swift; sourceTree = "<group>"; };
 		D9BFEB3123AFA6B700830245 /* loteria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loteria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9BFEB3423AFA6B700830245 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9BFEB3623AFA6B700830245 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				D98F1A8623BFBFA500649778 /* ChildSummaryView.swift */,
+				D996196023C32924003E5EDD /* ChildCardView.swift */,
+				D996196223C3397E003E5EDD /* ChildStackSummaryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -443,9 +449,11 @@
 				D9BFEB5C23AFB04F00830245 /* ChristmasSummaryResponse.swift in Sources */,
 				D9946C0123C1FC7500ED5EB8 /* Inject.swift in Sources */,
 				D9BFEB6623AFB53400830245 /* ChristmasSummaryViewModel.swift in Sources */,
+				D996196123C32924003E5EDD /* ChildCardView.swift in Sources */,
 				D9BFEB3723AFA6B700830245 /* SceneDelegate.swift in Sources */,
 				D980E08923B89D6800749BBA /* String+Extensions.swift in Sources */,
 				D923B78223C1CD9E0027350B /* LotteryStatus.swift in Sources */,
+				D996196323C3397E003E5EDD /* ChildStackSummaryView.swift in Sources */,
 				D96A6D7323B927A2002925F4 /* Constants.swift in Sources */,
 				D94D8A9123B4A474006175C1 /* SearchView.swift in Sources */,
 				D9BFEB3923AFA6B700830245 /* AppView.swift in Sources */,
