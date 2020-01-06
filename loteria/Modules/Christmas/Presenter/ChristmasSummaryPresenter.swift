@@ -54,25 +54,22 @@ class ChristmasSummaryPresenter: ObservableObject {
     }
     
     return ChristmasSummaryViewModel(
-      firstPrize: self.map(number: response.number1),
-      secondPrize: self.map(number: response.number2),
-      thirdPrize: self.map(number: response.number3),
-      forthPrizes: [self.map(number: response.number4), self.map(number: response.number5)],
-      fifthPrizes: [self.map(number: response.number6),
-                    self.map(number: response.number7),
-                    self.map(number: response.number8),
-                    self.map(number: response.number9),
-                    self.map(number: response.number10),
-                    self.map(number: response.number11),
-                    self.map(number: response.number12),
-                    self.map(number: response.number13),
+      firstPrize: self.mapper.map(number: response.number1),
+      secondPrize: self.mapper.map(number: response.number2),
+      thirdPrize: self.mapper.map(number: response.number3),
+      forthPrizes: [self.mapper.map(number: response.number4),
+                    self.mapper.map(number: response.number5)],
+      fifthPrizes: [self.mapper.map(number: response.number6),
+                    self.mapper.map(number: response.number7),
+                    self.mapper.map(number: response.number8),
+                    self.mapper.map(number: response.number9),
+                    self.mapper.map(number: response.number10),
+                    self.mapper.map(number: response.number11),
+                    self.mapper.map(number: response.number12),
+                    self.mapper.map(number: response.number13),
       ],
       statusMessage: self.mapper.map(status: response.status),
       lastUpdateMessage: self.mapper.map(lastUpdate: response.timestamp)
     )
-  }
-  
-  private func map(number: Int) -> String {
-    return String(format: "%05d", number)
   }
 }

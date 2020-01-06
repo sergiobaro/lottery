@@ -221,7 +221,8 @@
 		D98F1A8323BFBDF900649778 /* Christmas */ = {
 			isa = PBXGroup;
 			children = (
-				D9BFEB6023AFB1E400830245 /* Summary */,
+				D90C9BAB23C323DF0035F750 /* Presenter */,
+				D98273E123B115D5000FA3F8 /* View */,
 			);
 			path = Christmas;
 			sourceTree = "<group>";
@@ -322,15 +323,6 @@
 				D9BFEB3623AFA6B700830245 /* SceneDelegate.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		D9BFEB6023AFB1E400830245 /* Summary */ = {
-			isa = PBXGroup;
-			children = (
-				D90C9BAB23C323DF0035F750 /* Presenter */,
-				D98273E123B115D5000FA3F8 /* View */,
-			);
-			path = Summary;
 			sourceTree = "<group>";
 		};
 		D9BFEB6923AFC7F000830245 /* Views */ = {

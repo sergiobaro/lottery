@@ -18,4 +18,22 @@ class LotteryMapper {
     return "Última actualización: " + df.string(from: date)
   }
   
+  func map(numbers: [Int], length: Int = 5) -> [String] {
+    return numbers.map { self.map(number: $0, length: length) }
+  }
+  
+  func map(numbers: [String], length: Int = 5) -> [String] {
+    return numbers.map { self.map(number: $0, length: length) }
+  }
+  
+  func map(number: String, length: Int = 5) -> String {
+    return (number == "-1" ? String(repeating: "-", count: length) : number)
+  }
+  
+  func map(number: Int, length: Int = 5) -> String {
+    if number < 0 {
+      return String(repeating: "-", count: length)
+    }
+    return String(format: "%0\(length)d", number)
+  }
 }
