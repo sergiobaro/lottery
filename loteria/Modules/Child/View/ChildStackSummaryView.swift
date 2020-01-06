@@ -10,7 +10,9 @@ struct ChildStackSummaryView: View {
         .padding()
       HStack {
         ChildCardView(viewModel: viewModel.secondPrize)
+          .padding(.trailing, 10.0)
         ChildCardView(viewModel: viewModel.thirdPrize)
+          .padding(.leading, 10.0)
       }
       .padding()
       .padding(.top, -10)

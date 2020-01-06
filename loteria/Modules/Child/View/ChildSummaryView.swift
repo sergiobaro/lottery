@@ -5,15 +5,16 @@ struct ChildSummaryView: View {
   @ObservedObject var presenter = ChildSummaryPresenter()
   
   var body: some View {
-    ScrollView {
+    VStack {
       if self.presenter.isLoading {
         Spinner(isAnimating: true)
       } else {
-        SummaryButtons() {
-          self.presenter.userDidRefresh()
+        ScrollView {
+          SummaryButtons() {
+            self.presenter.userDidRefresh()
+          }
+          ChildStackSummaryView(viewModel: self.presenter.viewModel)
         }
-        ChildStackSummaryView(viewModel: self.presenter.viewModel)
-        Spacer()
       }
     }
     .onAppear {

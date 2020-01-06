@@ -29,7 +29,7 @@ private extension ChildSummaryPresenter {
     self.isLoading = true
     
     self.repository.fetchSummary()
-      .receive(on: DispatchQueue.main)
+      .delay(for: 0.1, scheduler: DispatchQueue.main)
       .sink(
         receiveCompletion: { [weak self] value in
           guard let self = self else { return }
@@ -60,7 +60,7 @@ private extension ChildSummaryPresenter {
       endings4digits: .init(title: "TERMINACIONES 4 CIFRAS", numbers: self.map(numbers: response.extractions4digits, length: 4), prize: "3.500 €"),
       endings3digits: .init(title: "TERMINACIONES 3 CIFRAS", numbers: self.map(numbers: response.extractions3digits, length: 3), prize: "100 €"),
       endings2digits: .init(title: "TERMINACIONES 2 CIFRAS", numbers: self.map(numbers: response.extractions2digits, length: 2), prize: "400 €"),
-      repayments: .init(title: "TERMINACIONES ESPECIALES", numbers: self.map(numbers: response.repayments, length: 1), prize: "")
+      repayments: .init(title: "TERMINACIONES ESPECIALES", numbers: self.map(numbers: response.repayments, length: 1), prize: "20 €")
     )
   }
   
@@ -80,6 +80,6 @@ private extension ChildSummaryPresenter {
     if number < 0 {
       return String(repeating: "-", count: length)
     }
-    return String(format: "%05d", number)
+    return String(format: "%0\(length)d", number)
   }
 }

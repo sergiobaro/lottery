@@ -11,33 +11,47 @@ struct ChildCardView: View {
       Divider()
         .background(Color.gray)
         .padding(-5)
-      HStack {
-        Spacer()
-        ForEach(viewModel.numbers.prefix(6), id: \.self) { number in
-          Group {
-            Text(number)
-              .font(.title)
-              .padding([.top, .bottom], -5)
+      VStack {
+        ForEach(0...numberOfRows(), id: \.self) { row in
+          HStack {
             Spacer()
+            ForEach(self.slice(row: row), id: \.self) { number in
+              Group {
+                Text(number)
+                  .font(.title)
+                Spacer()
+              }
+            }
           }
         }
       }
-      .padding(.bottom, 5)
-      if !viewModel.prize.isEmpty {
-        Divider()
-          .background(Color.gray)
-          .padding([.leading, .trailing], -5)
-        Text(viewModel.prize)
-          .foregroundColor(.blue)
-          .font(.footnote)
-          .padding(.top, -5)
-      }
+      Divider()
+        .background(Color.gray)
+        .padding([.leading, .trailing], -5)
+      Text(viewModel.prize)
+        .foregroundColor(.blue)
+        .font(.footnote)
+        .padding(.top, -5)
     }
     .padding(5.0)
     .overlay(
       RoundedRectangle(cornerRadius: 2)
       .stroke(Color.gray, lineWidth: 1.0)
     )
+  }
+  
+  private let maxNumbersPerRow = 5
+  
+  private func numberOfRows() -> Int {
+    let numberOfColumns = viewModel.numbers.count / maxNumbersPerRow
+    return numberOfColumns
+  }
+  
+  private func slice(row: Int) -> ArraySlice<String> {
+    let start = maxNumbersPerRow * row
+    let end = min(self.viewModel.numbers.count, start + maxNumbersPerRow)
+    
+    return self.viewModel.numbers[start..<end]
   }
 }
 

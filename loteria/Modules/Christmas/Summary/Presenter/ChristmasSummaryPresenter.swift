@@ -28,7 +28,7 @@ class ChristmasSummaryPresenter: ObservableObject {
     self.isLoading = true
     
     self.repository.fetchSummary()
-      .receive(on: DispatchQueue.main)
+      .delay(for: 0.1, scheduler: DispatchQueue.main)
       .sink(
         receiveCompletion: { [weak self] value in
           guard let self = self else { return }
