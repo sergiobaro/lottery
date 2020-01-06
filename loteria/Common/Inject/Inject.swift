@@ -25,7 +25,11 @@ class Dependencies {
 class Inject<Value> {
   private let name: String?
   
-  init(_ name: String?) {
+  init() {
+    self.name = nil
+  }
+  
+  init(_ name: String) {
     self.name = name
   }
   

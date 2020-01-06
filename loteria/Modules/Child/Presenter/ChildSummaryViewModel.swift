@@ -24,6 +24,9 @@ struct ChildSummaryViewModel {
   let endings2digits: ChildPrizeViewModel
   let repayments: ChildPrizeViewModel
   
+  let statusMessage: String
+  let lastUpdateMessage: String
+  
   static func empty() -> Self {
     return .init(
       firstPrize: .init(title: "", numbers: [], prize: ""),
@@ -32,7 +35,9 @@ struct ChildSummaryViewModel {
       endings4digits: .init(title: "", numbers: [], prize: ""),
       endings3digits: .init(title: "", numbers: [], prize: ""),
       endings2digits: .init(title: "", numbers: [], prize: ""),
-      repayments: .init(title: "", numbers: [], prize: "")
+      repayments: .init(title: "", numbers: [], prize: ""),
+      statusMessage: "",
+      lastUpdateMessage: ""
     )
   }
   
@@ -44,7 +49,9 @@ struct ChildSummaryViewModel {
       endings4digits: .init(title: "TERMINACIONES 4 CIFRAS", numbers: ["3297", "3905"], prize: "3.500 €"),
       endings3digits: .init(title: "TERMINACIONES 3 CIFRAS", numbers: ["245", "647", "932", "172", "586", "446", "200", "028", "149", "154", "397", "515", "129", "791"], prize: "1.000 €"),
       endings2digits: .init(title: "TERMINACIONES 2 CIFRAS", numbers: ["58", "18", "00", "78", "95"], prize: "400 €"),
-      repayments: .init(title: "EXTRACCIONES ESPECIALES", numbers: ["8", "0"], prize: "20 €")
+      repayments: .init(title: "EXTRACCIONES ESPECIALES", numbers: ["8", "0"], prize: "20 €"),
+      statusMessage: "El sorteo ha terminado",
+      lastUpdateMessage: "Última actualización: 12/22/19, 5:04 PM"
     )
   }
 }

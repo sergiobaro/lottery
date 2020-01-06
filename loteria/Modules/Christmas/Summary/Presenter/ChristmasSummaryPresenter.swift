@@ -8,6 +8,7 @@ class ChristmasSummaryPresenter: ObservableObject {
   @Published var isLoading = false
   
   @Inject("ChristmasLotteryRepository") private var repository: ChristmasLotteryRepository
+  @Inject private var mapper: LotteryMapper
   private var firstAppear = true
   private var cancellables = Set<AnyCancellable>()
   
@@ -66,29 +67,12 @@ class ChristmasSummaryPresenter: ObservableObject {
                     self.map(number: response.number12),
                     self.map(number: response.number13),
       ],
-      statusMessage: self.map(status: response.status),
-      lastUpdateMessage: self.map(lastUpdate: response.timestamp)
+      statusMessage: self.mapper.map(status: response.status),
+      lastUpdateMessage: self.mapper.map(lastUpdate: response.timestamp)
     )
   }
   
   private func map(number: Int) -> String {
     return String(format: "%05d", number)
-  }
-  
-  private func map(status: LotteryStatus) -> String {
-    switch status {
-      case .notStarted: return "El sorteo no ha comenzado"
-      case .started: return "El sorteo ya ha comenzado"
-      case .finished, .finishedWithPDF, .finishedOfficial: return "El sorteo ha terminado"
-    }
-  }
-  
-  private func map(lastUpdate: Int) -> String {
-    let date = Date(timeIntervalSince1970: TimeInterval(lastUpdate))
-    let df = DateFormatter()
-    df.timeStyle = .short
-    df.dateStyle = .short
-    
-    return "Última actualización: " + df.string(from: date)
   }
 }

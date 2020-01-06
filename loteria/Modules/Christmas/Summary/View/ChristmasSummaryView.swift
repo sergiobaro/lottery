@@ -13,6 +13,11 @@ struct ChristmasSummaryView: View {
           self.presenter.userDidRefresh()
         }
         ChristmasSummaryStackView(viewModel: self.presenter.viewModel)
+        LotteryStatusView(
+          statusMessage: self.presenter.viewModel.statusMessage,
+          lastUpdateMessage: self.presenter.viewModel.lastUpdateMessage
+        )
+        .padding(.bottom, 10.0)
         Spacer()
       }
     }

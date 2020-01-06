@@ -6,6 +6,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     Dependencies.shared.add(name: "ChristmasLotteryRepository", value: LotteryRepositoryBuilder.christmas())
     Dependencies.shared.add(name: "ChildLotteryRepository", value: LotteryRepositoryBuilder.child())
+    Dependencies.shared.add(name: "LotteryMapper", value: LotteryMapper())
     
     return true
   }

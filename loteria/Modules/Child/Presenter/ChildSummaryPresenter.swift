@@ -7,6 +7,7 @@ class ChildSummaryPresenter: ObservableObject {
   @Published var isLoading = false
   
   @Inject("ChildLotteryRepository") private var repository: ChildLotteryRepository
+  @Inject private var mapper: LotteryMapper
   private var firstAppear = true
   private var cancellables = Set<AnyCancellable>()
   
@@ -60,7 +61,9 @@ private extension ChildSummaryPresenter {
       endings4digits: .init(title: "TERMINACIONES 4 CIFRAS", numbers: self.map(numbers: response.extractions4digits, length: 4), prize: "3.500 €"),
       endings3digits: .init(title: "TERMINACIONES 3 CIFRAS", numbers: self.map(numbers: response.extractions3digits, length: 3), prize: "100 €"),
       endings2digits: .init(title: "TERMINACIONES 2 CIFRAS", numbers: self.map(numbers: response.extractions2digits, length: 2), prize: "400 €"),
-      repayments: .init(title: "TERMINACIONES ESPECIALES", numbers: self.map(numbers: response.repayments, length: 1), prize: "20 €")
+      repayments: .init(title: "TERMINACIONES ESPECIALES", numbers: self.map(numbers: response.repayments, length: 1), prize: "20 €"),
+      statusMessage: self.mapper.map(status: response.status),
+      lastUpdateMessage: self.mapper.map(lastUpdate: response.timestamp)
     )
   }
   

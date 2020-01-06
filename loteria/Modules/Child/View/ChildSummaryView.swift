@@ -14,6 +14,11 @@ struct ChildSummaryView: View {
             self.presenter.userDidRefresh()
           }
           ChildStackSummaryView(viewModel: self.presenter.viewModel)
+          LotteryStatusView(
+            statusMessage: self.presenter.viewModel.statusMessage,
+            lastUpdateMessage: self.presenter.viewModel.lastUpdateMessage
+          )
+          .padding(.bottom, 10.0)
         }
       }
     }
