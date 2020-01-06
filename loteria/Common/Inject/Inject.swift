@@ -14,7 +14,7 @@ class Dependencies {
   func resolve<T>(name: String?) -> T {
     let name = name ?? String(describing: T.self)
     guard let value = self.values[name] as? T else {
-      fatalError("Could not solve \(T.self)")
+      fatalError("Could not solve \(name) with type \(T.self)")
     }
     
     return value

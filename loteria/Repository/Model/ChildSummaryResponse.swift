@@ -22,9 +22,9 @@ struct ChildSummaryResponse: Decodable {
     case prize1 = "premio1"
     case prize2 = "premio2"
     case prize3 = "premio3"
-    case extractions2digits = "extracciones2cifras"
-    case extractions3digits = "extracciones3cifras"
     case extractions4digits = "extracciones4cifras"
+    case extractions3digits = "extracciones3cifras"
+    case extractions2digits = "extracciones2cifras"
     case repayments = "reintegros"
   }
   
