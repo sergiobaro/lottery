@@ -2,6 +2,12 @@ import Foundation
 import Combine
 
 class SearchPresenter: ObservableObject {
+
+  struct Constants {
+    static let amountPerTenth = 20
+    static let maxDigitsPerNumber = 5
+  }
+  
   @Published var searchText = ""
   @Published var amountText = ""
   @Published var searchDisabled = false

@@ -9,17 +9,18 @@ struct ChristmasSummaryView: View {
       if self.presenter.isLoading {
         Spinner(isAnimating: true)
       } else {
-        SummaryButtons(
-          refresh: { self.presenter.userDidRefresh() },
-          sheet: { SearchView(presenter: SearchPresenter(repository: LotteryRepositoryBuilder.christmas())) }
-        )
-        ChristmasSummaryStackView(viewModel: self.presenter.viewModel)
-        LotteryStatusView(
-          statusMessage: self.presenter.viewModel.statusMessage,
-          lastUpdateMessage: self.presenter.viewModel.lastUpdateMessage
-        )
-        .padding(.bottom, 10.0)
-        Spacer()
+        ScrollView {
+          SummaryButtons(
+            refresh: { self.presenter.userDidRefresh() },
+            sheet: { SearchView(presenter: SearchPresenter(repository: LotteryRepositoryBuilder.christmas())) }
+          )
+          ChristmasSummaryStackView(viewModel: self.presenter.viewModel)
+          LotteryStatusView(
+            statusMessage: self.presenter.viewModel.statusMessage,
+            lastUpdateMessage: self.presenter.viewModel.lastUpdateMessage
+          )
+          .padding(.bottom, 10.0)
+        }
       }
     }
     .onAppear {

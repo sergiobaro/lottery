@@ -17,7 +17,6 @@
 		D94FA6AA23C3ABBB004E0BAF /* LotteryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FA6A923C3ABBB004E0BAF /* LotteryMapper.swift */; };
 		D94FA6AC23C3AD24004E0BAF /* LotteryStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FA6AB23C3AD24004E0BAF /* LotteryStatusView.swift */; };
 		D95018D323B0F0E7007C6D0A /* ChristmasSummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95018D223B0F0E7007C6D0A /* ChristmasSummaryCardView.swift */; };
-		D96A6D7323B927A2002925F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A6D7223B927A2002925F4 /* Constants.swift */; };
 		D980E08623B89C2F00749BBA /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980E08523B89C2F00749BBA /* SearchViewModel.swift */; };
 		D980E08923B89D6800749BBA /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980E08823B89D6800749BBA /* String+Extensions.swift */; };
 		D980E08D23B8A46300749BBA /* SearchFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980E08C23B8A46300749BBA /* SearchFormView.swift */; };
@@ -42,6 +41,7 @@
 		D9BFEB6623AFB53400830245 /* ChristmasSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6523AFB53400830245 /* ChristmasSummaryViewModel.swift */; };
 		D9BFEB6823AFB63F00830245 /* ChristmasSummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6723AFB63F00830245 /* ChristmasSummaryPresenter.swift */; };
 		D9BFEB6B23AFC7FA00830245 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFEB6A23AFC7FA00830245 /* Spinner.swift */; };
+		D9D65C7023C46EED00198B1B /* SystemImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D65C6F23C46EED00198B1B /* SystemImageButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,6 @@
 		D94FA6A923C3ABBB004E0BAF /* LotteryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryMapper.swift; sourceTree = "<group>"; };
 		D94FA6AB23C3AD24004E0BAF /* LotteryStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryStatusView.swift; sourceTree = "<group>"; };
 		D95018D223B0F0E7007C6D0A /* ChristmasSummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasSummaryCardView.swift; sourceTree = "<group>"; };
-		D96A6D7223B927A2002925F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D980E08523B89C2F00749BBA /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		D980E08823B89D6800749BBA /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D980E08C23B8A46300749BBA /* SearchFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormView.swift; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		D9BFEB6523AFB53400830245 /* ChristmasSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasSummaryViewModel.swift; sourceTree = "<group>"; };
 		D9BFEB6723AFB63F00830245 /* ChristmasSummaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasSummaryPresenter.swift; sourceTree = "<group>"; };
 		D9BFEB6A23AFC7FA00830245 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		D9D65C6F23C46EED00198B1B /* SystemImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImageButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,8 +279,6 @@
 				D90C71E523B1279A003F49AD /* Common */,
 				D9BFEB5F23AFB1A500830245 /* App */,
 				D9BFEB5623AFA6E200830245 /* Repository */,
-				D9BFEB3A23AFA6B800830245 /* Assets.xcassets */,
-				D9BFEB3F23AFA6B800830245 /* LaunchScreen.storyboard */,
 				D9BFEB4223AFA6B800830245 /* Info.plist */,
 				D9BFEB3C23AFA6B800830245 /* Preview Content */,
 			);
@@ -317,7 +315,8 @@
 		D9BFEB5F23AFB1A500830245 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				D96A6D7223B927A2002925F4 /* Constants.swift */,
+				D9BFEB3A23AFA6B800830245 /* Assets.xcassets */,
+				D9BFEB3F23AFA6B800830245 /* LaunchScreen.storyboard */,
 				D9BFEB3823AFA6B700830245 /* AppView.swift */,
 				D9BFEB3423AFA6B700830245 /* AppDelegate.swift */,
 				D9BFEB3623AFA6B700830245 /* SceneDelegate.swift */,
@@ -330,6 +329,7 @@
 			children = (
 				D9BFEB6A23AFC7FA00830245 /* Spinner.swift */,
 				D923B78323C1D91B0027350B /* SummaryButtons.swift */,
+				D9D65C6F23C46EED00198B1B /* SystemImageButton.swift */,
 				D94FA6AB23C3AD24004E0BAF /* LotteryStatusView.swift */,
 			);
 			path = Views;
@@ -454,6 +454,7 @@
 				D9BFEB5823AFA6FB00830245 /* LotteryRepository.swift in Sources */,
 				D923B78423C1D91B0027350B /* SummaryButtons.swift in Sources */,
 				D98273E323B115F8000FA3F8 /* ChristmasSummaryStackView.swift in Sources */,
+				D9D65C7023C46EED00198B1B /* SystemImageButton.swift in Sources */,
 				D9BFEB5C23AFB04F00830245 /* ChristmasSummaryResponse.swift in Sources */,
 				D9946C0123C1FC7500ED5EB8 /* Inject.swift in Sources */,
 				D9BFEB6623AFB53400830245 /* ChristmasSummaryViewModel.swift in Sources */,
@@ -462,7 +463,6 @@
 				D980E08923B89D6800749BBA /* String+Extensions.swift in Sources */,
 				D923B78223C1CD9E0027350B /* LotteryStatus.swift in Sources */,
 				D996196323C3397E003E5EDD /* ChildStackSummaryView.swift in Sources */,
-				D96A6D7323B927A2002925F4 /* Constants.swift in Sources */,
 				D94D8A9123B4A474006175C1 /* SearchView.swift in Sources */,
 				D9BFEB3923AFA6B700830245 /* AppView.swift in Sources */,
 				D9BFEB6B23AFC7FA00830245 /* Spinner.swift in Sources */,

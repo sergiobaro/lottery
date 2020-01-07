@@ -1,18 +1,19 @@
 import SwiftUI
 
 struct SummaryButtons: View {
+  
   @State private var showSearch = false
   let refresh: () -> Void
   let sheet: () -> SearchView
   
   var body: some View {
     HStack {
-      self.button(symbol: "magnifyingglass") {
+      SystemImageButton(symbolName: "magnifyingglass") {
         self.showSearch = true
       }
       .sheet(isPresented: $showSearch, content: self.sheet)
       Spacer()
-      self.button(symbol: "arrow.clockwise") {
+      SystemImageButton(symbolName: "arrow.clockwise") {
         self.refresh()
       }
     }
@@ -21,10 +22,4 @@ struct SummaryButtons: View {
     .padding([.leading, .trailing], 15.0)
   }
   
-  private func button(symbol symbolName: String, action: @escaping () -> ()) -> some View {
-    Button(action: action) {
-      Image(systemName: symbolName)
-        .font(.title)
-    }
-  }
 }
