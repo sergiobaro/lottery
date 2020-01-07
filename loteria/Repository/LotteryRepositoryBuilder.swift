@@ -3,8 +3,8 @@ import Foundation
 private let ChristmasLotteryUrl = "https://api.elpais.com/ws/LoteriaNavidadPremiados"
 private let ChildLotteryUrl = "https://api.elpais.com/ws/LoteriaNinoPremiados"
 
-typealias ChristmasLotteryRepository = LotteryRepository<ChristmasSummaryResponse, LotterySearchResponse>
-typealias ChildLotteryRepository = LotteryRepository<ChildSummaryResponse, LotterySearchResponse>
+typealias ChristmasLotteryRepository = LotteryRepository<ChristmasSummaryResponse>
+typealias ChildLotteryRepository = LotteryRepository<ChildSummaryResponse>
 
 class LotteryRepositoryBuilder {
   

@@ -9,9 +9,10 @@ struct ChristmasSummaryView: View {
       if self.presenter.isLoading {
         Spinner(isAnimating: true)
       } else {
-        SummaryButtons() {
-          self.presenter.userDidRefresh()
-        }
+        SummaryButtons(
+          refresh: { self.presenter.userDidRefresh() },
+          sheet: { SearchView(presenter: SearchPresenter(repository: LotteryRepositoryBuilder.christmas())) }
+        )
         ChristmasSummaryStackView(viewModel: self.presenter.viewModel)
         LotteryStatusView(
           statusMessage: self.presenter.viewModel.statusMessage,

@@ -10,9 +10,10 @@ struct ChildSummaryView: View {
         Spinner(isAnimating: true)
       } else {
         ScrollView {
-          SummaryButtons() {
-            self.presenter.userDidRefresh()
-          }
+          SummaryButtons(
+            refresh: { self.presenter.userDidRefresh() },
+            sheet: { SearchView(presenter: SearchPresenter(repository: LotteryRepositoryBuilder.child())) }
+          )
           ChildStackSummaryView(viewModel: self.presenter.viewModel)
           LotteryStatusView(
             statusMessage: self.presenter.viewModel.statusMessage,

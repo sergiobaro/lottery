@@ -1,15 +1,16 @@
 import Foundation
 import Combine
 
+protocol SearchLotteryRepository {
+  func search(number: Int) -> AnyPublisher<LotterySearchResponse?, LotteryRepositoryError>
+}
+
 enum LotteryRepositoryError: Error {
   case url(_ description: String)
   case network(_ description: String)
 }
 
-class LotteryRepository<
-  SummaryResponse: Decodable,
-  SearchResponse: Decodable
-> {
+class LotteryRepository<SummaryResponse: Decodable>: SearchLotteryRepository {
   
   private let url: String
   private let session = URLSession.shared
@@ -29,14 +30,14 @@ class LotteryRepository<
       .eraseToAnyPublisher()
   }
   
-  func search(number: Int) -> AnyPublisher<SearchResponse?, LotteryRepositoryError> {
+  func search(number: Int) -> AnyPublisher<LotterySearchResponse?, LotteryRepositoryError> {
     guard let url = self.url(with: String(number)) else {
       return Fail(error: .url("Couldn't build url with number: \(number)")).eraseToAnyPublisher()
     }
     
     return self.session.dataTaskPublisher(for: url)
       .mapError { .network($0.localizedDescription) }
-      .map { self.parse(data: $0.data, type: SearchResponse.self) }
+      .map { self.parse(data: $0.data, type: LotterySearchResponse.self) }
       .eraseToAnyPublisher()
   }
   

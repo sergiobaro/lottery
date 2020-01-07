@@ -8,11 +8,12 @@ class SearchPresenter: ObservableObject {
   @Published var isLoading = false
   @Published var viewModel = SearchViewModel.empty()
   
-  @Inject("ChristmasLotteryRepository") private var repository: ChristmasLotteryRepository
-  private var searchTextCancellable: AnyCancellable!
+  private var repository: SearchLotteryRepository
   private var cancellables = Set<AnyCancellable>()
   
-  init() {
+  init(repository: SearchLotteryRepository) {
+    self.repository = repository
+    
     let invalidCharacters = CharacterSet(charactersIn: "1234567890").inverted
     
     $searchText

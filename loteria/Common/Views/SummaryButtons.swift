@@ -3,15 +3,14 @@ import SwiftUI
 struct SummaryButtons: View {
   @State private var showSearch = false
   let refresh: () -> Void
+  let sheet: () -> SearchView
   
   var body: some View {
     HStack {
       self.button(symbol: "magnifyingglass") {
         self.showSearch = true
       }
-      .sheet(isPresented: $showSearch) {
-        SearchView()
-      }
+      .sheet(isPresented: $showSearch, content: self.sheet)
       Spacer()
       self.button(symbol: "arrow.clockwise") {
         self.refresh()

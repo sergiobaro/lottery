@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SearchView: View {
-  @ObservedObject private var presenter = SearchPresenter()
+  @ObservedObject var presenter: SearchPresenter
   
   var body: some View {
     ZStack {
@@ -32,6 +32,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
   static var previews: some View {
-    SearchView()
+    SearchView(presenter: SearchPresenter(repository: LotteryRepositoryBuilder.christmas()))
   }
 }
